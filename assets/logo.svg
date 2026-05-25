@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 65" width="200" height="65">
+  <rect width="200" height="65" fill="#080808" rx="3"/>
+  <text x="12" y="46" font-family="Arial Black, Helvetica Neue, sans-serif" font-size="34" font-weight="900" letter-spacing="1.5">
+    <tspan fill="#D42B2B">GRIP</tspan><tspan fill="#F5F0EB">FUSION</tspan>
+  </text>
+</svg>

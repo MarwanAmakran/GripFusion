@@ -1,795 +1,522 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GripFusion – Premium 2-in-1 Fitnessband</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GripFusion – Premium 2-in-1 Fitnessband</title>
+  <meta name="description" content="GripFusion combineert lifting straps én polswraps in één premium band. Speciaal voor krachtsporters. First Edition — slechts 200 stuks.">
 
-  :root {
-    --red: #D42B2B;
-    --red-dark: #9E1A1A;
-    --red-glow: rgba(212,43,43,0.25);
-    --black: #0A0A0A;
-    --black2: #111111;
-    --black3: #1A1A1A;
-    --gray: #2A2A2A;
-    --gray-light: #444;
-    --white: #F5F0EB;
-    --white-dim: rgba(245,240,235,0.6);
-    --white-faint: rgba(245,240,235,0.12);
-  }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
 
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--black);
-    color: var(--white);
-    font-family: 'Barlow', sans-serif;
-    font-weight: 400;
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
-
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 1.2rem 5%;
-    background: rgba(10,10,10,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(212,43,43,0.2);
-  }
-
-  .nav-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.8rem;
-    letter-spacing: 0.05em;
-    color: var(--white);
-    text-decoration: none;
-  }
-  .nav-logo span { color: var(--red); }
-
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a {
-    color: var(--white-dim);
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--red); }
-
-  .nav-cta {
-    background: var(--red);
-    color: var(--white) !important;
-    padding: 0.5rem 1.4rem;
-    border-radius: 2px;
-  }
-  .nav-cta:hover { background: var(--red-dark) !important; color: var(--white) !important; }
-
-  /* HERO */
-  #hero {
-    min-height: 100vh;
-    display: flex; align-items: center;
-    padding: 8rem 5% 5rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-bg {
-    position: absolute; inset: 0; z-index: 0;
-    background:
-      radial-gradient(ellipse 60% 50% at 70% 50%, rgba(212,43,43,0.12) 0%, transparent 70%),
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 80px,
-        rgba(255,255,255,0.015) 80px,
-        rgba(255,255,255,0.015) 81px
-      ),
-      repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 80px,
-        rgba(255,255,255,0.015) 80px,
-        rgba(255,255,255,0.015) 81px
-      );
-  }
-
-  .hero-content { position: relative; z-index: 1; max-width: 700px; }
-
-  .hero-tag {
-    display: inline-block;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--red);
-    border: 1px solid var(--red);
-    padding: 0.3rem 0.8rem;
-    margin-bottom: 1.5rem;
-    border-radius: 1px;
-  }
-
-  h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(4rem, 10vw, 7.5rem);
-    line-height: 0.92;
-    letter-spacing: 0.02em;
-    margin-bottom: 1.5rem;
-  }
-  h1 em { color: var(--red); font-style: normal; }
-
-  .hero-sub {
-    font-size: 1.1rem;
-    color: var(--white-dim);
-    max-width: 520px;
-    margin-bottom: 2.5rem;
-    font-weight: 300;
-    line-height: 1.8;
-  }
-
-  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
-
-  .btn-primary {
-    display: inline-block;
-    background: var(--red);
-    color: var(--white);
-    text-decoration: none;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 0.9rem 2.5rem;
-    border-radius: 2px;
-    transition: background 0.2s, transform 0.15s;
-    border: none; cursor: pointer;
-  }
-  .btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); }
-
-  .btn-outline {
-    display: inline-block;
-    background: transparent;
-    color: var(--white);
-    text-decoration: none;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 0.9rem 2.5rem;
-    border-radius: 2px;
-    border: 1px solid rgba(245,240,235,0.3);
-    transition: border-color 0.2s, transform 0.15s;
-  }
-  .btn-outline:hover { border-color: var(--white); transform: translateY(-1px); }
-
-  .hero-note {
-    font-size: 0.78rem;
-    color: var(--white-dim);
-    letter-spacing: 0.05em;
-    margin-top: 1.2rem;
-  }
-  .hero-note span { color: var(--red); }
-
-  /* STATS BAR */
-  .stats-bar {
-    background: var(--black3);
-    border-top: 1px solid var(--gray);
-    border-bottom: 1px solid var(--gray);
-    padding: 1.5rem 5%;
-    display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap;
-  }
-  .stat { text-align: center; }
-  .stat-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.2rem;
-    color: var(--red);
-    line-height: 1;
-  }
-  .stat-label {
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--white-dim);
-    margin-top: 0.2rem;
-  }
-
-  /* SECTIONS */
-  section { padding: 6rem 5%; }
-
-  .section-tag {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 1rem;
-  }
-
-  h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    line-height: 1;
-    letter-spacing: 0.03em;
-    margin-bottom: 1.5rem;
-  }
-
-  /* WAT WE DOEN */
-  #wat {
-    background: var(--black2);
-    border-top: 1px solid var(--gray);
-  }
-  .wat-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: center;
-    max-width: 1200px; margin: 0 auto;
-  }
-  .wat-text p { color: var(--white-dim); font-size: 1.05rem; margin-bottom: 1.2rem; }
-
-  .wat-visual {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-  .wat-card {
-    background: var(--black3);
-    border: 1px solid var(--gray);
-    border-radius: 3px;
-    padding: 1.5rem;
-    transition: border-color 0.2s;
-  }
-  .wat-card:hover { border-color: var(--red); }
-  .wat-card:nth-child(2) { margin-top: 2rem; }
-  .wat-card:nth-child(3) { margin-top: -1rem; }
-  .wat-icon {
-    font-size: 1.8rem;
-    margin-bottom: 0.8rem;
-    display: block;
-  }
-  .wat-card h3 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 0.4rem;
-    color: var(--white);
-  }
-  .wat-card p { font-size: 0.88rem; color: var(--white-dim); line-height: 1.6; }
-
-  @media (max-width: 768px) {
-    .wat-grid { grid-template-columns: 1fr; gap: 3rem; }
-  }
-
-  /* USP */
-  #usp { background: var(--black); }
-  .usp-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1px;
-    border: 1px solid var(--gray);
-    border-radius: 3px;
-    overflow: hidden;
-    max-width: 1100px; margin: 3rem auto 0;
-  }
-  .usp-item {
-    background: var(--black2);
-    padding: 2.5rem 2rem;
-    transition: background 0.2s;
-  }
-  .usp-item:hover { background: var(--black3); }
-  .usp-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 3rem;
-    color: var(--red);
-    opacity: 0.4;
-    line-height: 1;
-    margin-bottom: 1rem;
-  }
-  .usp-item h3 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    margin-bottom: 0.6rem;
-    color: var(--white);
-  }
-  .usp-item p { font-size: 0.9rem; color: var(--white-dim); line-height: 1.65; }
-
-  /* VISIE */
-  #visie {
-    background: var(--red);
-    text-align: center;
-    padding: 5rem 5%;
-  }
-  #visie .section-tag { color: rgba(245,240,235,0.7); }
-  #visie h2 { color: var(--white); font-size: clamp(1.8rem, 4vw, 3rem); max-width: 800px; margin: 0 auto 1.5rem; }
-  #visie p { color: rgba(245,240,235,0.85); max-width: 640px; margin: 0 auto; font-size: 1.05rem; }
-
-  /* PRODUCTEN */
-  #producten { background: var(--black2); border-top: 1px solid var(--gray); }
-  .product-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    max-width: 900px; margin: 3rem auto 0;
-  }
-  @media (max-width: 600px) { .product-grid { grid-template-columns: 1fr; } }
-
-  .product-card {
-    border: 1px solid var(--gray);
-    border-radius: 3px;
-    overflow: hidden;
-    transition: transform 0.2s, border-color 0.2s;
-  }
-  .product-card:hover { transform: translateY(-4px); }
-  .product-card.golden { border-color: #C8972A; }
-  .product-card.golden:hover { border-color: #E5B340; }
-
-  .product-header {
-    padding: 2rem 2rem 1rem;
-    background: var(--black3);
-  }
-  .product-badge {
-    display: inline-block;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding: 0.25rem 0.7rem;
-    border-radius: 2px;
-    margin-bottom: 1rem;
-  }
-  .golden .product-badge { background: rgba(200,151,42,0.15); color: #E5B340; border: 1px solid rgba(200,151,42,0.4); }
-  .silver .product-badge { background: rgba(160,160,180,0.1); color: #C0C0D0; border: 1px solid rgba(160,160,180,0.3); }
-
-  .product-name {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
-    letter-spacing: 0.05em;
-    line-height: 1;
-    margin-bottom: 0.3rem;
-  }
-  .golden .product-name { color: #E5B340; }
-  .silver .product-name { color: #C0C0D0; }
-
-  .product-sub { font-size: 0.82rem; color: var(--white-dim); letter-spacing: 0.06em; }
-
-  .product-body { padding: 1.5rem 2rem 2rem; }
-  .product-price {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 3rem;
-    line-height: 1;
-    margin-bottom: 1.2rem;
-    color: var(--white);
-  }
-  .product-price sup { font-size: 1.2rem; vertical-align: top; margin-top: 0.6rem; font-family: 'Barlow', sans-serif; font-weight: 300; }
-
-  .product-features { list-style: none; margin-bottom: 1.5rem; }
-  .product-features li {
-    font-size: 0.88rem;
-    color: var(--white-dim);
-    padding: 0.4rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    display: flex; align-items: center; gap: 0.6rem;
-  }
-  .product-features li::before { content: "—"; color: var(--red); font-size: 0.75rem; }
-
-  .product-cta {
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 0.85rem;
-    border-radius: 2px;
-    font-size: 0.95rem;
-    transition: background 0.2s, transform 0.15s;
-  }
-  .golden .product-cta { background: #C8972A; color: #0A0A0A; }
-  .golden .product-cta:hover { background: #E5B340; }
-  .silver .product-cta { background: var(--red); color: var(--white); }
-  .silver .product-cta:hover { background: var(--red-dark); }
-
-  /* SOCIAL */
-  .social-links {
-    display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap;
-  }
-  .social-link {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    text-decoration: none;
-    color: var(--white-dim);
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--gray);
-    border-radius: 2px;
-    transition: border-color 0.2s, color 0.2s;
-  }
-  .social-link:hover { border-color: var(--red); color: var(--white); }
-  .social-icon { font-size: 1rem; }
-
-  /* CONTACT */
-  #contact { background: var(--black); border-top: 1px solid var(--gray); }
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    max-width: 1000px; margin: 0 auto;
-    align-items: start;
-  }
-  @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 3rem; } }
-
-  .contact-info p { color: var(--white-dim); margin-bottom: 1.5rem; }
-  .contact-detail {
-    display: flex; align-items: flex-start; gap: 1rem;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-    color: var(--white-dim);
-  }
-  .contact-detail strong { color: var(--white); display: block; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.1rem; }
-
-  .form-group { margin-bottom: 1.2rem; }
-  .form-group label {
-    display: block;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--white-dim);
-    margin-bottom: 0.4rem;
-  }
-  .form-group input,
-  .form-group textarea {
-    width: 100%;
-    background: var(--black3);
-    border: 1px solid var(--gray);
-    border-radius: 2px;
-    color: var(--white);
-    font-family: 'Barlow', sans-serif;
-    font-size: 0.95rem;
-    padding: 0.75rem 1rem;
-    transition: border-color 0.2s;
-    outline: none;
-  }
-  .form-group input:focus,
-  .form-group textarea:focus { border-color: var(--red); }
-  .form-group textarea { min-height: 130px; resize: vertical; }
-
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
-
-  .form-submit {
-    width: 100%;
-    background: var(--red);
-    color: var(--white);
-    border: none;
-    border-radius: 2px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 1rem;
-    cursor: pointer;
-    transition: background 0.2s;
-    margin-top: 0.5rem;
-  }
-  .form-submit:hover { background: var(--red-dark); }
-
-  /* FOOTER */
-  footer {
-    background: var(--black2);
-    border-top: 1px solid var(--gray);
-    padding: 2.5rem 5%;
-    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
-  }
-  .footer-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.4rem;
-    letter-spacing: 0.05em;
-    color: var(--white);
-    text-decoration: none;
-  }
-  .footer-logo span { color: var(--red); }
-  footer p { font-size: 0.8rem; color: var(--white-dim); }
-
-  /* ANIMATIONS */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .hero-content > * {
-    opacity: 0;
-    animation: fadeUp 0.7s ease forwards;
-  }
-  .hero-tag { animation-delay: 0.1s; }
-  h1 { animation-delay: 0.25s; }
-  .hero-sub { animation-delay: 0.4s; }
-  .hero-actions { animation-delay: 0.55s; }
-  .hero-note { animation-delay: 0.65s; }
-
-  /* MOBILE NAV */
-  @media (max-width: 680px) {
-    .nav-links { display: none; }
-    nav { padding: 1rem 5%; }
-  }
-</style>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a class="nav-logo" href="#hero"><span>GRIP</span>FUSION</a>
-  <ul class="nav-links">
-    <li><a href="#wat">Wat we doen</a></li>
-    <li><a href="#usp">Voordelen</a></li>
-    <li><a href="#producten">Producten</a></li>
-    <li><a href="#contact" class="nav-cta">Contact</a></li>
-  </ul>
-</nav>
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+  <nav id="navbar" role="navigation" aria-label="Hoofdnavigatie">
+    <a href="#hero" class="nav-logo" aria-label="GripFusion home">
+      <img src="assets/logo.png" alt="GripFusion" class="logo-img"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'">
+      <span class="nav-logo-text" style="display:none; font-family:'Bebas Neue',sans-serif; font-size:1.7rem; letter-spacing:0.04em; color:#F5F0EB;">
+        <span style="color:#D42B2B">GRIP</span>FUSION
+      </span>
+    </a>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div class="hero-tag">Premium 2-in-1 Fitnessband · First Edition</div>
-    <h1>GRIP.<br><em>FUSION.</em></h1>
-    <p class="hero-sub">
-      Voor fitnessers die krachtraining doen en zowel straps als polswraps gebruiken —
-      GripFusion combineert beide functies in één premium band. Nooit meer vergeten. Nooit meer kwijt.
-    </p>
-    <div class="hero-actions">
-      <a href="#producten" class="btn-primary">Bekijk de producten</a>
-      <a href="#wat" class="btn-outline">Meer info</a>
-    </div>
-    <p class="hero-note"><span>⚡ Limited:</span> First 100 Golden + First 100 Silver — individueel genummerd. Op = op.</p>
+    <ul class="nav-links">
+      <li><a href="#probleem">Probleem</a></li>
+      <li><a href="#oplossing">Oplossing</a></li>
+      <li><a href="#visie">Visie</a></li>
+      <li><a href="#producten">Producten</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile overlay menu -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
+    <ul>
+      <li><a href="#probleem" class="mobile-link">Probleem</a></li>
+      <li><a href="#oplossing" class="mobile-link">Oplossing</a></li>
+      <li><a href="#visie"     class="mobile-link">Visie</a></li>
+      <li><a href="#producten" class="mobile-link">Producten</a></li>
+      <li><a href="#contact"   class="mobile-link">Contact</a></li>
+    </ul>
   </div>
-</section>
 
-<!-- STATS BAR -->
-<div class="stats-bar">
-  <div class="stat">
-    <div class="stat-num">2-in-1</div>
-    <div class="stat-label">Functies in één band</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">200</div>
-    <div class="stat-label">First Edition stuks</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">€34,99</div>
-    <div class="stat-label">Vanaf prijs</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">1/1</div>
-    <div class="stat-label">Geen enkel ander product</div>
-  </div>
-</div>
 
-<!-- WAT WE DOEN -->
-<section id="wat">
-  <div class="wat-grid">
-    <div class="wat-text">
-      <div class="section-tag">Wat we doen</div>
-      <h2>EÉN BAND.<br>ALLES IN ONE.</h2>
-      <p>
-        Krachtsporters die deadlifts, rugoefeningen en zware compound-oefeningen doen
-        hebben altijd twee aparte producten nodig: straps voor grip en polswraps voor stabiliteit.
-        Dat betekent vier losse banden in je tas — die je regelmatig verliest of vergeet.
-      </p>
-      <p>
-        GripFusion lost dit op. Eén band die beide functies combineert, zodat je minder meeneemt
-        en meer kunt focussen op wat écht telt: trainen.
-      </p>
-      <div class="social-links">
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="social-link">
-          <span class="social-icon">📸</span> Instagram
-        </a>
-        <a href="https://www.tiktok.com/" target="_blank" rel="noopener" class="social-link">
-          <span class="social-icon">🎵</span> TikTok
-        </a>
-      </div>
-    </div>
-    <div class="wat-visual">
-      <div class="wat-card">
-        <span class="wat-icon">💪</span>
-        <h3>Grip</h3>
-        <p>Maximale gripondersteuning voor deadlifts, pull-oefeningen en zware rugoefeningen.</p>
-      </div>
-      <div class="wat-card">
-        <span class="wat-icon">🛡️</span>
-        <h3>Polsstabiliteit</h3>
-        <p>Ingebouwde polsondersteuning voor borst-, schouder- en bicepsoefeningen.</p>
-      </div>
-      <div class="wat-card">
-        <span class="wat-icon">🎯</span>
-        <h3>Focus</h3>
-        <p>Minder rommel in je tas. Meer aandacht voor progressie en techniek.</p>
-      </div>
-      <div class="wat-card">
-        <span class="wat-icon">🔒</span>
-        <h3>Betrouwbaar</h3>
-        <p>Nooit meer vergeten of kwijt. Alles wat je nodig hebt zit in één band.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  <main>
 
-<!-- USP -->
-<section id="usp">
-  <div style="max-width: 1100px; margin: 0 auto;">
-    <div class="section-tag">Waarom GripFusion</div>
-    <h2>UNIEK IN DE MARKT</h2>
-    <div class="usp-grid">
-      <div class="usp-item">
-        <div class="usp-num">01</div>
-        <h3>2-in-1 concept</h3>
-        <p>Nergens anders verkrijgbaar als geïntegreerd product. GripFusion combineert grip én polsondersteuning in één band — een unieke oplossing op de Belgische markt.</p>
-      </div>
-      <div class="usp-item">
-        <div class="usp-num">02</div>
-        <h3>Nooit meer vergeten</h3>
-        <p>Omdat alles in één zit, heb je altijd alles bij. Geen vier losse banden meer die door je sportas slingeren of thuis blijven liggen.</p>
-      </div>
-      <div class="usp-item">
-        <div class="usp-num">03</div>
-        <h3>First Edition collectie</h3>
-        <p>Elk exemplaar is individueel genummerd. Slechts 100 Golden en 100 Silver beschikbaar. Exclusiviteit en verzamelwaarde ingebouwd.</p>
-      </div>
-      <div class="usp-item">
-        <div class="usp-num">04</div>
-        <h3>Eerlijke prijs</h3>
-        <p>Twee losse producten bij XXL Nutrition kosten samen ±€32. GripFusion geeft je beide functies voor €34,99–€39,99 in één geïntegreerd premium design.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section id="hero" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-noise" aria-hidden="true"></div>
 
-<!-- VISIE -->
-<section id="visie">
-  <div class="section-tag">Onze visie</div>
-  <h2>"KRACHTSPORT EENVOUDIGER, EFFICIËNTER EN TOEGANKELIJKER MAKEN"</h2>
-  <p>
-    GripFusion is opgericht vanuit een simpele frustratie: fitnessers missen hun doelen niet door gebrek aan
-    motivatie, maar door onpraktisch materiaal. Wij geloven dat accessoires nooit in de weg mogen staan van
-    je training. Daarom beginnen we met de meest onderschatte band in je sportas.
-  </p>
-</section>
+      <div class="hero-inner">
 
-<!-- PRODUCTEN -->
-<section id="producten">
-  <div style="max-width: 900px; margin: 0 auto;">
-    <div class="section-tag">Onze producten</div>
-    <h2>KIES JE FUSION</h2>
-    <div class="product-grid">
-      <!-- Golden -->
-      <div class="product-card golden">
-        <div class="product-header">
-          <div class="product-badge">⭐ First 100 Golden</div>
-          <div class="product-name">Golden Fusion</div>
-          <div class="product-sub">Belgische productie · Individueel genummerd</div>
-        </div>
-        <div class="product-body">
-          <div class="product-price"><sup>€</sup>39,99</div>
-          <ul class="product-features">
-            <li>Grip + polsondersteuning 2-in-1</li>
-            <li>Geproduceerd in Belgisch atelier</li>
-            <li>Individueel genummerd exemplaar</li>
-            <li>Slechts 100 stuks beschikbaar</li>
-            <li>Premium afwerking</li>
-          </ul>
-          <a href="#contact" class="product-cta">Bestel nu</a>
-        </div>
-      </div>
-      <!-- Silver -->
-      <div class="product-card silver">
-        <div class="product-header">
-          <div class="product-badge">First 100 Silver</div>
-          <div class="product-name">Silver Fusion</div>
-          <div class="product-sub">OEM productie · Individueel genummerd</div>
-        </div>
-        <div class="product-body">
-          <div class="product-price"><sup>€</sup>34,99</div>
-          <ul class="product-features">
-            <li>Grip + polsondersteuning 2-in-1</li>
-            <li>Gespecialiseerde OEM-fabrikant</li>
-            <li>Individueel genummerd exemplaar</li>
-            <li>Slechts 100 stuks beschikbaar</li>
-            <li>Ideale instapvariant</li>
-          </ul>
-          <a href="#contact" class="product-cta">Bestel nu</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <!-- Text -->
+        <div class="hero-content">
+          <span class="hero-eyebrow">Premium 2-in-1 Fitnessband &mdash; First Edition</span>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="contact-grid">
-    <div class="contact-info">
-      <div class="section-tag">Contact</div>
-      <h2>NEEM CONTACT OP</h2>
-      <p>Vragen over het product, een pre-order plaatsen of samenwerken? Stuur ons een bericht.</p>
+          <h1 id="hero-title">
+            STOP MET<br>
+            <em>VERGETEN.</em><br>
+            START MET<br>
+            <em>FUSEREN.</em>
+          </h1>
 
-      <div class="contact-detail">
-        <div>
-          <strong>E-mail</strong>
-          info@gripfusion.be
-        </div>
-      </div>
-      <div class="contact-detail">
-        <div>
-          <strong>Locatie</strong>
-          Oost-Vlaanderen, België
-        </div>
-      </div>
-      <div class="contact-detail">
-        <div>
-          <strong>Sociale media</strong>
-          @GripFusion op Instagram & TikTok
-        </div>
-      </div>
+          <p class="hero-lead">
+            Grip + polsondersteuning. Eén band. Zero excuses.<br>
+            Nooit meer vier losse banden in je tas.
+          </p>
 
-      <div class="social-links" style="margin-top: 1.5rem;">
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="social-link">
-          <span>📸</span> Instagram
-        </a>
-        <a href="https://www.tiktok.com/" target="_blank" rel="noopener" class="social-link">
-          <span>🎵</span> TikTok
-        </a>
-      </div>
-    </div>
-
-    <div>
-      <form onsubmit="return false;">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="voornaam">Voornaam</label>
-            <input type="text" id="voornaam" name="voornaam" placeholder="Marwan">
+          <div class="hero-actions">
+            <a href="#producten" class="btn btn--primary">Bekijk de producten</a>
+            <a href="#oplossing" class="btn btn--ghost">Hoe werkt het?</a>
           </div>
-          <div class="form-group">
-            <label for="achternaam">Achternaam</label>
-            <input type="text" id="achternaam" name="achternaam" placeholder="Amakran">
+
+          <p class="hero-scarcity">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            <span><strong>First 100 Golden</strong> + <strong>First 100 Silver</strong> — individueel genummerd &middot; op&nbsp;=&nbsp;op</span>
+          </p>
+        </div>
+
+        <!-- Visual -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-ring-wrap">
+            <div class="ring ring--outer"></div>
+            <div class="ring ring--mid"></div>
+            <div class="ring ring--inner"></div>
+
+            <div class="hero-logo-center">
+              <img src="assets/logo.png" alt="" class="logo-img"
+                   onerror="this.style.display='none'">
+            </div>
+
+            <div class="hero-badge">
+              <span class="badge-number">2</span>
+              <span class="badge-label">in&nbsp;1</span>
+            </div>
           </div>
         </div>
-        <div class="form-group">
-          <label for="email">E-mailadres</label>
-          <input type="email" id="email" name="email" placeholder="jouw@email.be">
-        </div>
-        <div class="form-group">
-          <label for="bericht">Bericht</label>
-          <textarea id="bericht" name="bericht" placeholder="Jouw vraag of bericht..."></textarea>
-        </div>
-        <button type="submit" class="form-submit">Verstuur bericht</button>
-      </form>
-    </div>
-  </div>
-</section>
 
-<!-- FOOTER -->
-<footer>
-  <a class="footer-logo" href="#hero"><span>GRIP</span>FUSION</a>
-  <p>© 2026 GripFusion · Eenmanszaak · Oost-Vlaanderen, België</p>
-  <p style="font-size:0.75rem; color: rgba(245,240,235,0.35);">Premium 2-in-1 fitnessband</p>
-</footer>
+      </div><!-- /.hero-inner -->
+
+      <div class="hero-scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         MARQUEE
+         ============================================================ -->
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="marquee-track">
+        <span>GRIP</span><span class="sep">&nbsp;&middot;&nbsp;</span>
+        <span>FOCUS</span><span class="sep">&nbsp;&middot;&nbsp;</span>
+        <span>STERKTE</span><span class="sep">&nbsp;&middot;&nbsp;</span>
+        <span>FUSION</span><span class="sep">&nbsp;&middot;&nbsp;</span>
+        <span>TRAIN HARDER</span><span class="sep">&nbsp;&middot;&nbsp;</span>
+        <span>NOOIT MEER VERGETEN</span><span class="sep">&nbsp;&middot;&nbsp;</span>
+        <span>2-IN-1</span><span class="sep">&nbsp;&middot;&nbsp;</span>
+        <span>FIRST EDITION</span><span class="sep">&nbsp;&middot;&nbsp;</span>
+        <!-- duplicate for seamless loop -->
+        <span>GRIP</span><span class="sep">&nbsp;&middot;&nbsp;</span>
+        <span>FOCUS</span><span class="sep">&nbsp;&middot;&nbsp;</span>
+        <span>STERKTE</span><span class="sep">&nbsp;&middot;&nbsp;</span>
+        <span>FUSION</span><span class="sep">&nbsp;&middot;&nbsp;</span>
+        <span>TRAIN HARDER</span><span class="sep">&nbsp;&middot;&nbsp;</span>
+        <span>NOOIT MEER VERGETEN</span><span class="sep">&nbsp;&middot;&nbsp;</span>
+        <span>2-IN-1</span><span class="sep">&nbsp;&middot;&nbsp;</span>
+        <span>FIRST EDITION</span><span class="sep">&nbsp;&middot;&nbsp;</span>
+      </div>
+    </div>
+
+
+    <!-- ============================================================
+         PROBLEEM
+         ============================================================ -->
+    <section id="probleem" class="section" aria-labelledby="probleem-title">
+      <div class="container">
+        <header class="section-header">
+          <p class="section-tag">Het probleem</p>
+          <h2 id="probleem-title">HERKEN JE DIT?</h2>
+        </header>
+
+        <div class="problems-grid">
+          <div class="problem-card reveal">
+            <div class="problem-x" aria-hidden="true">✕</div>
+            <h3>Straps vergeten</h3>
+            <p>Je staat bij het deadlift rek. Straps? Thuis. Alwéér.</p>
+          </div>
+          <div class="problem-card reveal reveal-delay-1">
+            <div class="problem-x" aria-hidden="true">✕</div>
+            <h3>Wraps kwijt</h3>
+            <p>Vier losse banden in je tas. Altijd zoeken. Nooit compleet.</p>
+          </div>
+          <div class="problem-card reveal reveal-delay-2">
+            <div class="problem-x" aria-hidden="true">✕</div>
+            <h3>Dubbele kosten</h3>
+            <p>Straps + polswraps apart bij XXL? Samen al snel €30+.</p>
+          </div>
+          <div class="problem-card reveal reveal-delay-3">
+            <div class="problem-x" aria-hidden="true">✕</div>
+            <h3>Concentratie weg</h3>
+            <p>Wisselen tussen oefeningen. Opnieuw omwinden. Focus weg.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         OPLOSSING
+         ============================================================ -->
+    <section id="oplossing" class="section section--dark" aria-labelledby="oplossing-title">
+      <div class="container">
+        <div class="solution-grid">
+
+          <!-- Text -->
+          <div class="solution-text reveal">
+            <p class="section-tag">De oplossing</p>
+            <h2 id="oplossing-title">EÉN BAND.<br>ALLES ERIN.</h2>
+            <p class="lead">
+              GripFusion combineert gripondersteuning én polsstabiliteit in één 2-in-1 band.
+              Speciaal ontwikkeld voor krachtsporters die compound-oefeningen doen.
+            </p>
+
+            <ul class="solution-list">
+              <li>
+                <span class="check-mark" aria-hidden="true">✓</span>
+                <div>
+                  <strong>Grip functie</strong>
+                  <span>Maximale ondersteuning bij deadlifts, rows en pull-oefeningen</span>
+                </div>
+              </li>
+              <li>
+                <span class="check-mark" aria-hidden="true">✓</span>
+                <div>
+                  <strong>Polsstabiliteit</strong>
+                  <span>Ingebouwde wraps voor borst-, schouder- en bicepsoefeningen</span>
+                </div>
+              </li>
+              <li>
+                <span class="check-mark" aria-hidden="true">✓</span>
+                <div>
+                  <strong>2-in-1 design</strong>
+                  <span>Alles in één band — nooit meer vergeten, nooit meer kwijt</span>
+                </div>
+              </li>
+            </ul>
+
+            <div class="social-row">
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="social-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+                Instagram
+              </a>
+              <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" class="social-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true">
+                  <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.72a8.18 8.18 0 004.78 1.52V6.79a4.85 4.85 0 01-1.01-.1z"/>
+                </svg>
+                TikTok
+              </a>
+            </div>
+          </div>
+
+          <!-- Feature cards -->
+          <div class="features-grid">
+            <div class="feature-card reveal">
+              <div class="feature-num" aria-hidden="true">01</div>
+              <div class="feature-icon" aria-hidden="true">💪</div>
+              <h3>Grip</h3>
+              <p>Deadlifts, rows, pull-oefeningen — de strap-functie houdt de bar vast wanneer jij het zwaarst trekt.</p>
+            </div>
+            <div class="feature-card reveal reveal-delay-1">
+              <div class="feature-num" aria-hidden="true">02</div>
+              <div class="feature-icon" aria-hidden="true">🛡️</div>
+              <h3>Pols</h3>
+              <p>De wrap-functie stabiliseert je pols bij press-bewegingen en beschermt tegen overbelasting.</p>
+            </div>
+            <div class="feature-card reveal reveal-delay-2">
+              <div class="feature-num" aria-hidden="true">03</div>
+              <div class="feature-icon" aria-hidden="true">⚡</div>
+              <h3>Snelheid</h3>
+              <p>In seconden wisselen tussen modi. Meer tijd trainen, minder tijd sjorren met losse banden.</p>
+            </div>
+            <div class="feature-card reveal reveal-delay-3">
+              <div class="feature-num" aria-hidden="true">04</div>
+              <div class="feature-icon" aria-hidden="true">🔢</div>
+              <h3>First Edition</h3>
+              <p>Elk exemplaar individueel genummerd. 200 stuks. Collectie-item met blijvende waarde.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         VISIE
+         ============================================================ -->
+    <section id="visie" class="section section--red" aria-labelledby="visie-title">
+      <div class="container visie-inner">
+        <p class="section-tag">Onze visie</p>
+        <blockquote id="visie-title">
+          "Krachtsport eenvoudiger,<br>
+          efficiënter en toegankelijker maken."
+        </blockquote>
+        <p class="visie-desc">
+          GripFusion is opgericht vanuit een simpele frustratie: fitnessers missen hun doelen
+          niet door gebrek aan motivatie, maar door onpraktisch materiaal. Wij geloven dat
+          accessoires nooit in de weg mogen staan van je training.
+        </p>
+
+        <div class="visie-stats">
+          <div class="v-stat">
+            <span class="v-num">240K</span>
+            <span class="v-label">Potentiële klanten in Vlaanderen</span>
+          </div>
+          <div class="v-stat">
+            <span class="v-num">200</span>
+            <span class="v-label">First Edition exemplaren</span>
+          </div>
+          <div class="v-stat">
+            <span class="v-num">#1</span>
+            <span class="v-label">Eerste 2-in-1 op de Belgische markt</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         PRODUCTEN
+         ============================================================ -->
+    <section id="producten" class="section section--dark" aria-labelledby="producten-title">
+      <div class="container">
+        <header class="section-header">
+          <p class="section-tag">Onze producten</p>
+          <h2 id="producten-title">KIES JE FUSION</h2>
+          <p class="section-lead">Beide varianten bevatten dezelfde 2-in-1 technologie. Het verschil zit in productie en afwerking.</p>
+        </header>
+
+        <div class="products-grid">
+
+          <!-- Golden Fusion -->
+          <article class="product-card golden reveal">
+            <div class="ribbon" aria-label="Meest exclusief">MEEST EXCLUSIEF</div>
+            <div class="product-top">
+              <span class="product-badge badge--gold">⭐ First 100 Golden</span>
+              <h3 class="product-name">Golden Fusion</h3>
+              <p class="product-origin">Belgische productie &middot; Atelier Devos</p>
+            </div>
+            <div class="product-price">
+              <span class="price-cur">€</span>
+              <span class="price-amt">39,99</span>
+            </div>
+            <ul class="product-features">
+              <li><span class="feat-check" aria-hidden="true">✓</span> Grip + polsondersteuning 2-in-1</li>
+              <li><span class="feat-check" aria-hidden="true">✓</span> Geproduceerd in Belgisch atelier</li>
+              <li><span class="feat-check" aria-hidden="true">✓</span> Individueel genummerd (#001–#100)</li>
+              <li><span class="feat-check" aria-hidden="true">✓</span> Slechts 100 stuks beschikbaar</li>
+              <li><span class="feat-check" aria-hidden="true">✓</span> Premium materiaalafwerking</li>
+            </ul>
+            <div class="product-cta-wrap">
+              <a href="#contact" class="btn btn--golden btn--full">Pre-order Golden Fusion</a>
+            </div>
+          </article>
+
+          <!-- Silver Fusion -->
+          <article class="product-card silver reveal reveal-delay-1">
+            <div class="product-top">
+              <span class="product-badge badge--silver">First 100 Silver</span>
+              <h3 class="product-name">Silver Fusion</h3>
+              <p class="product-origin">OEM productie &middot; Pakistan</p>
+            </div>
+            <div class="product-price">
+              <span class="price-cur">€</span>
+              <span class="price-amt">34,99</span>
+            </div>
+            <ul class="product-features">
+              <li><span class="feat-check" aria-hidden="true">✓</span> Grip + polsondersteuning 2-in-1</li>
+              <li><span class="feat-check" aria-hidden="true">✓</span> Gespecialiseerde OEM-fabrikant</li>
+              <li><span class="feat-check" aria-hidden="true">✓</span> Individueel genummerd (#001–#100)</li>
+              <li><span class="feat-check" aria-hidden="true">✓</span> Slechts 100 stuks beschikbaar</li>
+              <li><span class="feat-check" aria-hidden="true">✓</span> Ideale instapvariant</li>
+            </ul>
+            <div class="product-cta-wrap">
+              <a href="#contact" class="btn btn--primary btn--full">Pre-order Silver Fusion</a>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="products-note">Geleverd via eigen webshop &middot; Verzending via bpost &middot; First Edition = op is op</p>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         CONTACT
+         ============================================================ -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- Info -->
+          <div class="contact-info reveal">
+            <p class="section-tag">Contact</p>
+            <h2 id="contact-title">NEEM CONTACT OP</h2>
+            <p class="contact-intro">
+              Vragen over het product, een pre-order plaatsen of samenwerken als influencer?
+              Stuur ons een bericht.
+            </p>
+
+            <div class="contact-details">
+              <div class="c-item">
+                <span class="c-icon" aria-hidden="true">✉</span>
+                <div class="c-text">
+                  <strong>E-mail</strong>
+                  <span>info@gripfusion.be</span>
+                </div>
+              </div>
+              <div class="c-item">
+                <span class="c-icon" aria-hidden="true">📍</span>
+                <div class="c-text">
+                  <strong>Locatie</strong>
+                  <span>Oost-Vlaanderen, België</span>
+                </div>
+              </div>
+              <div class="c-item">
+                <span class="c-icon" aria-hidden="true">📱</span>
+                <div class="c-text">
+                  <strong>Sociale media</strong>
+                  <span>@GripFusion op Instagram &amp; TikTok</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="social-row">
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="social-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+                Instagram
+              </a>
+              <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" class="social-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true">
+                  <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.72a8.18 8.18 0 004.78 1.52V6.79a4.85 4.85 0 01-1.01-.1z"/>
+                </svg>
+                TikTok
+              </a>
+            </div>
+          </div>
+
+          <!-- Form (non-functional — opdracht requirement) -->
+          <form class="contact-form reveal reveal-delay-1" onsubmit="return false;" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="voornaam">Voornaam</label>
+                <input type="text" id="voornaam" name="voornaam" placeholder="Marwan" autocomplete="given-name">
+              </div>
+              <div class="form-group">
+                <label for="achternaam">Achternaam</label>
+                <input type="text" id="achternaam" name="achternaam" placeholder="Amakran" autocomplete="family-name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">E-mailadres</label>
+              <input type="email" id="email" name="email" placeholder="jouw@email.be" autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="onderwerp">Onderwerp</label>
+              <select id="onderwerp" name="onderwerp">
+                <option value="">Selecteer onderwerp&hellip;</option>
+                <option value="golden">Pre-order Golden Fusion</option>
+                <option value="silver">Pre-order Silver Fusion</option>
+                <option value="collab">Samenwerking / Influencer</option>
+                <option value="vraag">Algemene vraag</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="bericht">Bericht</label>
+              <textarea id="bericht" name="bericht" placeholder="Jouw vraag of bericht&hellip;"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Verstuur bericht</button>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- /main -->
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer>
+    <div class="footer-main">
+
+      <div class="footer-brand">
+        <a href="#hero" aria-label="GripFusion home">
+          <img src="assets/logo.png" alt="GripFusion" class="logo-img"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <span style="display:none; font-family:'Bebas Neue',sans-serif; font-size:1.5rem; letter-spacing:0.04em; color:#F5F0EB;">
+            <span style="color:#D42B2B">GRIP</span>FUSION
+          </span>
+        </a>
+        <p>Premium 2-in-1 fitnessband.<br>Eenmanszaak &middot; Oost-Vlaanderen, België.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigatie</h4>
+        <ul>
+          <li><a href="#probleem">Probleem</a></li>
+          <li><a href="#oplossing">Oplossing</a></li>
+          <li><a href="#visie">Visie</a></li>
+          <li><a href="#producten">Producten</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Volg ons</h4>
+        <div class="social-row">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="social-btn">Instagram</a>
+          <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" class="social-btn">TikTok</a>
+        </div>
+        <p class="footer-email">info@gripfusion.be</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom container">
+      <p>&copy; 2026 GripFusion &middot; Eenmanszaak &middot; België</p>
+      <p>Premium 2-in-1 fitnessband</p>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
 
 </body>
 </html>
