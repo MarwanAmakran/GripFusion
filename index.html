@@ -11,6 +11,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -93,18 +97,14 @@
           </p>
         </div>
 
-        <!-- Visual -->
+        <!-- Visual — 3D product mockup -->
         <div class="hero-visual" aria-hidden="true">
-          <div class="hero-ring-wrap">
-            <div class="ring ring--outer"></div>
-            <div class="ring ring--mid"></div>
-            <div class="ring ring--inner"></div>
-
-            <div class="hero-logo-center">
-              <img src="assets/logo.png" alt="" class="logo-img"
-                   onerror="this.style.display='none'">
-            </div>
-
+          <div class="hero-product-wrap">
+            <div class="product-glow"></div>
+            <img src="assets/product-banner.png"
+                 alt="GripFusion — Golden &amp; Silver Fusion"
+                 class="hero-product-img"
+                 onerror="this.style.opacity='0'">
             <div class="hero-badge">
               <span class="badge-number">2</span>
               <span class="badge-label">in&nbsp;1</span>
@@ -145,6 +145,74 @@
         <span>FIRST EDITION</span><span class="sep">&nbsp;&middot;&nbsp;</span>
       </div>
     </div>
+
+
+    <!-- ============================================================
+         PRODUCT SHOWCASE — 3D mockup
+         ============================================================ -->
+    <section id="showcase" class="section">
+      <div class="container">
+        <header class="section-header">
+          <p class="section-tag">Het product</p>
+          <h2>BUILT FOR SERIOUS LIFTERS</h2>
+          <p class="section-lead">Eén band. Twee functies. Zero compromise.</p>
+        </header>
+
+        <div class="showcase-grid">
+
+          <!-- Golden 3D mockup -->
+          <div class="mockup-card mockup-golden reveal">
+            <div class="mockup-img-wrap">
+              <img src="assets/golden-detail.png"
+                   alt="Golden Fusion — Premium Edition #1"
+                   onerror="this.style.opacity='0.2'">
+            </div>
+            <div class="mockup-info">
+              <span class="mockup-badge badge--gold">⭐ Golden Fusion</span>
+              <p class="mockup-label">Premium Edition &middot; Belgische productie</p>
+              <p class="mockup-price">€39,99</p>
+            </div>
+          </div>
+
+          <!-- Centre tagline -->
+          <div class="showcase-centre reveal reveal-delay-1">
+            <p class="tagline-line">ONE BAND.</p>
+            <p class="tagline-line">TWO FUNCTIONS.</p>
+            <p class="tagline-line tagline-gold">ZERO COMPROMISE.</p>
+            <ul class="showcase-features">
+              <li><span>⛓</span> Stronger Grip</li>
+              <li><span>🛡</span> Wrist Support</li>
+              <li><span>✓</span> All-in-One</li>
+              <li><span>🍃</span> Comfort Fit</li>
+            </ul>
+          </div>
+
+          <!-- Silver 3D mockup -->
+          <div class="mockup-card mockup-silver reveal reveal-delay-2">
+            <div class="mockup-img-wrap">
+              <img src="assets/silver-detail.png"
+                   alt="Silver Fusion — Essential Edition #1"
+                   onerror="this.style.opacity='0.2'">
+            </div>
+            <div class="mockup-info">
+              <span class="mockup-badge badge--silver">Silver Fusion</span>
+              <p class="mockup-label">Essential Edition &middot; OEM productie</p>
+              <p class="mockup-price">€34,99</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Full-width banner image -->
+        <div class="banner-wrap reveal">
+          <img src="assets/product-banner.png"
+               alt="GripFusion — One Band, Two Functions, Zero Compromise"
+               class="banner-img"
+               onerror="this.style.display='none'">
+        </div>
+
+      </div>
+    </section>
 
 
     <!-- ============================================================
@@ -322,6 +390,10 @@
           <!-- Golden Fusion -->
           <article class="product-card golden reveal">
             <div class="ribbon" aria-label="Meest exclusief">MEEST EXCLUSIEF</div>
+            <div class="product-photo">
+              <img src="assets/golden-pack.png" alt="Golden Fusion verpakking"
+                   onerror="this.parentElement.style.display='none'">
+            </div>
             <div class="product-top">
               <span class="product-badge badge--gold">⭐ First 100 Golden</span>
               <h3 class="product-name">Golden Fusion</h3>
@@ -345,6 +417,10 @@
 
           <!-- Silver Fusion -->
           <article class="product-card silver reveal reveal-delay-1">
+            <div class="product-photo">
+              <img src="assets/silver-pack.png" alt="Silver Fusion verpakking"
+                   onerror="this.parentElement.style.display='none'">
+            </div>
             <div class="product-top">
               <span class="product-badge badge--silver">First 100 Silver</span>
               <h3 class="product-name">Silver Fusion</h3>
