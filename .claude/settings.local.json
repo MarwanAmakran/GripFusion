@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(ls \"c:\\\\Users\\\\marwa\\\\.claude\\\\projects\\\\c--Users-marwa-Desktop-GripFusion\\\\memory\\\\\" 2>/dev/null || echo \"empty\")",
-      "Read(//c/Users/marwa/.claude/projects/c--Users-marwa-Desktop-GripFusion/memory\" 2>/dev/**)"
+      "Read(//c/Users/marwa/.claude/projects/c--Users-marwa-Desktop-GripFusion/memory\" 2>/dev/**)",
+      "Bash(not exist *)"
     ]
   }
 }
