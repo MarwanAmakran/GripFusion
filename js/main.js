@@ -43,6 +43,32 @@
     if (e.key === 'Escape') closeMenu();
   });
 
+  /* ── LAUNCH COUNTDOWN ─────────────────────────────────────── */
+  const launchDate = new Date('2027-01-01T00:00:00');
+  const timerEl    = document.getElementById('launchTimer');
+
+  function pad(n, len) { return String(n).padStart(len, '0'); }
+
+  function updateCountdown() {
+    const diff = launchDate - new Date();
+    if (diff <= 0) {
+      timerEl.innerHTML = '<span class="ct-launched">LAUNCHED!</span>';
+      return;
+    }
+    const days    = Math.floor(diff / 86400000);
+    const hours   = Math.floor((diff % 86400000) / 3600000);
+    const minutes = Math.floor((diff % 3600000)  / 60000);
+    const seconds = Math.floor((diff % 60000)    / 1000);
+
+    document.getElementById('ct-days').textContent  = pad(days, 3);
+    document.getElementById('ct-hours').textContent = pad(hours, 2);
+    document.getElementById('ct-mins').textContent  = pad(minutes, 2);
+    document.getElementById('ct-secs').textContent  = pad(seconds, 2);
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
   /* ── SCROLL REVEAL ─────────────────────────────────────────── */
   const revealEls = document.querySelectorAll('.reveal');
 
